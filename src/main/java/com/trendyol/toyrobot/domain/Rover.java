@@ -1,33 +1,24 @@
 package com.trendyol.toyrobot.domain;
 
+import com.trendyol.toyrobot.domain.point.Point;
+
 public class Rover {
 
-    private int x;
-    private int y;
+    Point point;
     private Compass compass;
 
     public Rover() {
-        this.x = 0;
-        this.y = 0;
+        point = new Point(0,0);
         this.compass = Compass.NORTH;
     }
 
     public Rover(int x, int y, Compass compass) {
-        this.x = x;
-        this.y = y;
+        point = new Point(x,y);
         this.compass = compass;
     }
 
     public void move() {
-        if (Compass.NORTH.equals(this.compass)) {
-            this.y = this.y + 1;
-        } else if (Compass.EAST.equals(this.compass)) {
-            this.x = this.x + 1;
-        } else if (Compass.SOUTH.equals(this.compass)) {
-            this.y = this.y - 1;
-        } else if (Compass.WEST.equals(this.compass)) {
-            this.x = this.x - 1;
-        }
+        this.point.
     }
 
     public void turnLeft() {
@@ -54,15 +45,5 @@ public class Rover {
         }
     }
 
-    public int getX() {
-        return this.x;
-    }
 
-    public int getY() {
-        return this.y;
-    }
-
-    public Compass getCompass() {
-        return this.compass;
-    }
 }
